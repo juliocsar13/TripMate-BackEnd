@@ -2,5 +2,15 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "mongoDs": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "mongodb://localhost:27017/tripmate",
+    "database": "tripmate",
+    "password": "",
+    "name": "mongoDs",
+    "user": "",
+    "connector": "mongodb"
   }
 }
