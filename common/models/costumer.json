@@ -32,7 +32,7 @@
     "description": {
       "type": "string"
     },
-    "type": {
+    "createdAt": {
       "type": "Date"
     }
   },
@@ -45,5 +45,5 @@
     }
   },
   "acls": [],
-  "methods": {}
+  "methods": {} 
 }

@@ -24,7 +24,7 @@
       "required": true
     },
     "createdAt": {
-      "type": "string",
+      "type": "Date",
       "required": true
     }
   },
