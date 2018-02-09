@@ -1,0 +1,49 @@
+{
+  "name": "customer",
+  "base": "User",
+  "idInjection": true,
+  "properties": {
+    "firtName": {
+      "type": "string",
+      "required": true
+    },
+    "lastName": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "password": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "string",
+      "require": true
+    },
+    "nationality": {
+      "type": "string"
+    },
+    "birthday": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "Date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "posts": {
+      "type": "hasMany",
+      "model": "post",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {} 
+}
