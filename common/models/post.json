@@ -23,6 +23,10 @@
       "type": "string",
       "required": true
     },
+    "url":{
+      "type":"string",
+      "required": true
+    },
     "createdAt": {
       "type": "Date",
       "required": true

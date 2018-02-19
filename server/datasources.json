@@ -1,17 +1,23 @@
 {
   "db": {
     "name": "db",
-    "connector": "memory"
+    "connector": "memory",
+    "hosts": [
+      {
+        "protocol": "http",
+        "host": "127.0.0.1",
+        "port": 9200
+      }
+    ]
   },
   "mongoDs": {
-    "host": "@ds229918.mlab.com",
-    "port": 29918,
-    "url": "mongodb://tripmateuser:tripmatepassword@ds229918.mlab.com:29918/tripmatedb",
+    "host": "localhost",
+    "port": 27017,
+    "url": "mongodb://localhost:27017/tripmatedb",
     "database": "tripmatedb",
-    "password": "tripmatepassword",
+    "password": "",
     "name": "mongoDs",
-    "user": "tripmateuser",
+    "user": "",
     "connector": "mongodb"
   }
-  
 }
