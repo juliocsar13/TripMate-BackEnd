@@ -10,7 +10,7 @@
       }
     ]
   },
-  "mongoDs": {
+  "mongo": {
     "host": "localhost",
     "port": 27017,
     "url": "mongodb://localhost:27017/tripmatedb",
@@ -19,5 +19,17 @@
     "name": "mongoDs",
     "user": "",
     "connector": "mongodb"
+  },
+  "mongoDs": {
+    "host": "@ds229918.mlab.com",
+    "port": 29918,
+    "url": "mongodb://tripmateuser:tripmatepassword@ds229918.mlab.com:29918/tripmatedb",
+    "database": "tripmatedb",
+    "password": "tripmatepassword",
+    "name": "mongoDs",
+    "user": "tripmateuser",
+    "connector": "mongodb"
   }
+
+
 }
