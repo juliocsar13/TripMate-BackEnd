@@ -1,7 +1,11 @@
 {
-  "name": "customer",
+  "name": "costumer",
+  "plural": "costumers",
   "base": "User",
   "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
   "properties": {
     "firtName": {
       "type": "string",
@@ -21,29 +25,33 @@
     },
     "address": {
       "type": "string",
-      "require": true
+      "required": true
     },
     "nationality": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "birthday": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
-    "description": {
-      "type": "string"
+    "descripction": {
+      "type": "string",
+      "required": true
     },
     "createdAt": {
-      "type": "Date"
+      "type": "Date",
+      "required": true
     }
   },
-  "validations": [],
-  "relations": {
-    "posts": {
-      "type": "hasMany",
-      "model": "post",
-      "foreignKey": ""
-    }
-  },
-  "acls": [],
-  "methods": {} 
+"validations": [],
+"relations": {
+  "posts": { 
+    "type": "hasMany",    
+    "model": "post",
+    "foreignKey": ""
+  }
+},
+"acls": [],
+"methods": {}
 }

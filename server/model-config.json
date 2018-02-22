@@ -38,5 +38,9 @@
   "post": {
     "dataSource": "mongoDs",
     "public": true
+  },
+  "costumer": {
+    "dataSource": "mongoDs",
+    "public": true
   }
 }
