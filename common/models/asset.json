@@ -1,0 +1,30 @@
+{
+  "name": "asset",
+  "plural": "assets",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "filename": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "size": {
+      "type": "number"
+    },
+    "url": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

@@ -23,8 +23,8 @@
       "type": "string",
       "required": true
     },
-    "url":{
-      "type":"string",
+    "file": {
+      "type": "object",
       "required": true
     },
     "createdAt": {

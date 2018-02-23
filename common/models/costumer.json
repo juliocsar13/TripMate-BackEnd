@@ -44,14 +44,14 @@
       "required": true
     }
   },
-"validations": [],
-"relations": {
-  "posts": { 
-    "type": "hasMany",    
-    "model": "post",
-    "foreignKey": ""
-  }
-},
-"acls": [],
-"methods": {}
+  "validations": [],
+  "relations": {
+    "posts": {
+      "type": "hasMany",
+      "model": "post",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
 }

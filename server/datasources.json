@@ -16,9 +16,17 @@
     "url": "mongodb://localhost:27017/tripmatedb",
     "database": "tripmatedb",
     "password": "",
-    "name": "mongoDs",
+    "name": "mongo",
     "user": "",
     "connector": "mongodb"
+  },
+  "grifit": {
+    "host": "localhost",
+    "port": 27017,
+    "database": "tripmatedb",
+    "name": "storage",
+    "provider": "storage",
+    "connector": "loopback-component-storage-mongo"
   },
   "mongoDs": {
     "host": "@ds229918.mlab.com",
@@ -30,6 +38,4 @@
     "user": "tripmateuser",
     "connector": "mongodb"
   }
-
-
 }

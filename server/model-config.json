@@ -36,10 +36,18 @@
     "public": false
   },
   "post": {
-    "dataSource": "mongoDs",
+    "dataSource": "grifit",
     "public": true
   },
   "costumer": {
+    "dataSource": "mongoDs",
+    "public": true
+  },
+  "container": {
+    "dataSource": "mongoDs",
+    "public": false
+  },
+  "asset": {
     "dataSource": "mongoDs",
     "public": true
   }
