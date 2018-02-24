@@ -24,7 +24,7 @@
       "required": true
     },
     "file": {
-      "type": "object",
+      "type": "any",
       "required": true
     },
     "createdAt": {

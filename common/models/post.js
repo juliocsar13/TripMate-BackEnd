@@ -1,37 +1,73 @@
 'use strict';
 const elasticsearch = require('elasticsearch')
-const filestack = require('filestack-js');
-const request = require('request');
-
+var multer = require('multer');
+var fs = require('fs');
 module.exports = function(Post) {
 
-   
-      Post.observe('before save',(context,next)=>{
-          console.log('ANTES DE GUARDAR',context.instance)
-          
-          next();
-      })
-      /*Post.observe('before delete', (context, next) => {
-        const Container = Post.app.models.Container;
-    
-        Post.findOne({where: context.where}, (error, post) => {
-          if (error) return next(error);
-    
-          const filename = post.filename;
-          Container.removeFile(BUCKET, filename, (error, reply) => {
-            if (error) {
-              return next(new Error(error));
+    /*
+    var uploadedFileName = '';
+    var storage = multer.diskStorage({
+        destination: function (req, file, cb) {
+            // checking and creating uploads folder where files will be uploaded
+            var dirPath = 'client/uploads/'
+            if (!fs.existsSync(dirPath)) {
+                var dir = fs.mkdirSync(dirPath);
             }
-    
-
-
-            next();
-          });
-        });
-      });*/
-    
-      
-    
+            cb(null, dirPath + '/');
+        },
+        filename: function (req, file, cb) {
+            // file will be accessible in `file` variable
+            var ext = file.originalname.substring(file.originalname.lastIndexOf("."));
+            var fileName = Date.now() + ext;
+            uploadedFileName = fileName;
+            cb(null, fileName);
+        }
+    });*/
+    Post.upload = function(req, res, body, cb) {
+        /*var upload = multer({
+         storage: storage
+         
+         }).array('file', 12);
+         upload(req, res, function (err) {
+             if (err) {
+                 // An error occurred when uploading
+                 res.json(err);
+             }
+             res.json(uploadedFileName);
+         });   */
+    }
+    Post.remoteMethod('upload', {
+        accepts: [{
+            arg: 'req',
+            type: 'object',
+            http: {
+                source: 'req'
+            }
+        }, {
+            arg: 'res',
+            type: 'object',
+            http: {
+                source: 'res'
+            }
+        }],
+        returns: {
+             arg: 'result',
+             type: 'string'
+        },
+        http: {path:'/uploadFile',verb: 'post'}
+        /*description: 'Uploads a file',
+        accepts: [
+          {arg: 'req', type: 'object', http: {source: 'req'}},
+          {arg: 'res', type: 'object', http: {source: 'res'}},
+          {arg: 'body', type: 'object', http: {source: 'body'}}
+        ],
+        returns: {
+          arg: 'fileObject',
+          type: 'object',
+          root: true
+        },
+        http: {path:'/uploadFile',verb: 'post'}*/
+    });
 
     let client  = new elasticsearch.Client({
         host:'localhost:9200'
