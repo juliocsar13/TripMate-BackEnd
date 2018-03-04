@@ -36,7 +36,7 @@
       "type": "string"
     },
     "createdAt": {
-      "type": "Date",
+      "type": "Date"
     }
   },
 "validations": [],
