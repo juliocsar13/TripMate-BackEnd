@@ -20,13 +20,13 @@
     "user": "",
     "connector": "mongodb"
   },
-  "grifit": {
+  "storage": {
     "host": "localhost",
     "port": 27017,
     "database": "tripmatedb",
     "name": "storage",
     "provider": "storage",
-    "connector": "loopback-component-storage-mongo"
+    "connector": "loopback-component-storage"
   },
   "mongoDs": {
     "host": "@ds229918.mlab.com",
