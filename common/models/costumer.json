@@ -7,7 +7,7 @@
     "validateUpsert": true
   },
   "properties": {
-    "firtName": {
+    "firstName": {
       "type": "string",
       "required": true
     },
@@ -24,24 +24,19 @@
       "required": true
     },
     "address": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "nationality": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "birthday": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
-    "descripction": {
-      "type": "string",
-      "required": true
+    "description": {
+      "type": "string"
     },
     "createdAt": {
-      "type": "Date",
-      "required": true
+      "type": "Date"
     }
   },
 "validations": [],
