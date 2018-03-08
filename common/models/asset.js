@@ -1,41 +1,39 @@
 'use strict';
-module.exports = function(Asset) {
-    Asset.upload = function(ctx,options,cb){
-        if(!options) options = {};
-        ctx.req.params.container = 'common';
-        Asset.app.models.container.upload(ctx.req,ctx.result,options,function (err,fileObj) {
-            if(err) {
-                cb(err);
-            } else {
-                var fileInfo = fileObj.files.file[0];
-                Asset.create({
-                    name: fileInfo.name,
-                    type: fileInfo.type,
-                    container: fileInfo.container,
-                    url: CONTAINERS_URL+fileInfo.container+'/download/'+fileInfo.name
-                },function (err,obj) {
-                    if (err !== null) {
-                        cb(err);
-                    } else {
-                        cb(null, obj);
-                    }
-                });
-            }
-        });
-    }
+const formidable = require('formidable');
+const request    = require('request');
+import filestack from 'filestack-js';
+ 
+const apikey = 'A5tRfehRUOvUnWCJpGSSgz';
+const client = filestack.init(apikey);
 
-    Asset.remoteMethod(
-        'upload',
-        {
-            description: 'Uploads a file',
-            accepts: [
-                { arg: 'ctx', type: 'object', http: { source:'context' } },
-                { arg: 'options', type: 'object', http:{ source: 'query'} }
-            ],
-            returns: {
-                arg: 'fileObject', type: 'object', root: true
-            },
-            http: {verb: 'post'}
+module.exports = (Asset) =>{
+    Asset.upload = (req, res, cb)=>{
+        const form = new formidable.IncomingForm();
+        form.parse(req);
+        form.on('file', (name, file)=>{
+            
+            client.pick({file}).then((result)=> {
+                console.log("URL DE STACK",result.filesUploaded[0].url)
+            })
+        })         
+    }
+    Asset.remoteMethod('upload',   {
+        accepts: [{
+            arg: 'req',
+            type: 'object',
+            http: {
+                source: 'req'
+            }
+        }, {
+            arg: 'res',
+            type: 'object',
+            http: {
+                source: 'res'
+            }
+        }],
+        returns: {
+             arg: 'result',
+             type: 'string'
         }
-    );
+    });
 };

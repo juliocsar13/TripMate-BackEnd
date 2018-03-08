@@ -40,15 +40,15 @@
     "public": true
   },
   "costumer": {
-    "dataSource": "mongoDs",
+    "dataSource": "mongo",
     "public": true
   },
   "container": {
-    "dataSource": "mongoDs",
+    "dataSource": "mongo",
     "public": true
   },
   "asset": {
-    "dataSource": "mongoDs",
+    "dataSource": "mongo",
     "public": true
   }
 }
